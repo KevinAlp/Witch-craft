@@ -136,7 +136,7 @@ func _show_page() -> void:
 		var card := VBoxContainer.new()
 		card.custom_minimum_size = Vector2(122, 138)
 		card.alignment = BoxContainer.ALIGNMENT_CENTER
-		var preview := GlyphPreview.new().setup(glyph_id)
+		var preview = GlyphPreviewScene.new().setup(glyph_id)
 		preview.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 		card.add_child(preview)
 		var label := Label.new()

@@ -5,7 +5,7 @@ const Compiler := preload("res://scripts/magic_compiler.gd")
 const CanvasScript := preload("res://scripts/drawing_canvas.gd")
 const TutorialScript := preload("res://scripts/tutorial_overlay.gd")
 
-var canvas: DrawingCanvas
+var canvas: Control
 var result_status: Label
 var result_subtitle: Label
 var code_output: RichTextLabel
@@ -140,7 +140,7 @@ func _build_workspace() -> Control:
 	canvas_margin.add_theme_constant_override("margin_top", 8)
 	canvas_margin.add_theme_constant_override("margin_bottom", 8)
 	canvas_panel.add_child(canvas_margin)
-	canvas = DrawingCanvas.new()
+	canvas = CanvasScript.new()
 	canvas.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	canvas.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	canvas.custom_minimum_size = Vector2(620, 540)
@@ -375,7 +375,7 @@ func _show_tutorial_if_needed() -> void:
 func _open_tutorial(mark_seen: bool = false) -> void:
 	if get_node_or_null("TutorialOverlay"):
 		return
-	var tutorial := TutorialOverlay.new()
+	var tutorial = TutorialScript.new()
 	tutorial.name = "TutorialOverlay"
 	tutorial.closed.connect(func() -> void:
 		if mark_seen:
