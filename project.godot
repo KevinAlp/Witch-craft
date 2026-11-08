@@ -1,0 +1,24 @@
+[application]
+config/name="L'Atelier des Glyphes"
+run/main_scene="res://main.tscn"
+
+[display]
+window/size/viewport_width=1440
+window/size/viewport_height=900
+window/size/window_width_override=1280
+window/size/window_height_override=800
+window/stretch/mode="canvas_items"
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.035, 0.047, 0.075, 1)
+
+[gui]
+theme/default_font_multichannel_signed_distance_field=true
+
+[input]
+undo={"deadzone": 0.5, "events": [Object(InputEventKey,"physical_keycode":90,"ctrl_pressed":true)]}
+redo={"deadzone": 0.5, "events": [Object(InputEventKey,"physical_keycode":89,"ctrl_pressed":true)]}
+compile_spell={"deadzone": 0.5, "events": [Object(InputEventKey,"physical_keycode":4194309,"ctrl_pressed":true)]}
+
